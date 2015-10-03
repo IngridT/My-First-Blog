@@ -4,17 +4,14 @@
 	</head>
 	<body>
 		<div>
-            <h1><a href="">Blog: The WriteUX</a></h1>
+        <h1><a href="">Blog: The WriteUX</a></h1>
         </div>
-        <div>
-            <p>published: 03.10.2015, 12:14</p>
-            <h2><a href="">Post1: My #1 UX Rule</a></h2>
-            <p>The customer is always right.</p>
-        </div>
-        <div>
-            <p>published: 03.10.2015, 14:04</p>
-            <h2><a href="">Post2: Drinking the Koolaid from the Firehose</a></h2>
-            <p>Are you the coyote or the roadrunner?</p>
-        </div>
+    	{% for post in posts %}
+    		<div>
+    			<p>published: {{ post.published_date }}</p>
+    			<h1><a href="">{{ post.title }}</a></h1>
+    			<p>{{ post.text|linebreaks }}</p>
+    		</div>
+		{% endfor %}
     </body>
 <html>
